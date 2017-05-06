@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "49BB36197BEFFDE49EF40BF31A3323195CEC0A34",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "49BB36197BEFFDE49EF40BF31A3323195CEC0A34" : 9223372036854775807,
+    "CBE0E2D4D26B6ED2144D8D6A197144CB06A01076" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "10B541C8-6D62-45A0-BD0F-C0472E52A1E0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "49BB36197BEFFDE49EF40BF31A3323195CEC0A34" : "DB6\/",
+    "CBE0E2D4D26B6ED2144D8D6A197144CB06A01076" : "..\/.."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "DB6Demo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "DB6Demo\/DB6Demo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jeksys\/DB6.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "49BB36197BEFFDE49EF40BF31A3323195CEC0A34"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:castingworkbook\/CWB_iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CBE0E2D4D26B6ED2144D8D6A197144CB06A01076"
+    }
+  ]
+}

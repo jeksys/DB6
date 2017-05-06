@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Default</key>
+	<dict>
+		<key>integer</key>
+		<string>42</string>
+		<key>string</key>
+		<string>string</string>
+		<key>boolean</key>
+		<string>true</string>
+		<key>colorHex</key>
+		<string>#222222</string>
+		<key>colorRGBA</key>
+		<string>200.200.200.50</string>
+		<key>colorVariable</key>
+		<string>@colorHex</string>
+		<key>variable</key>
+		<string>@string</string>
+		<key>intReference</key>
+		<string>@integer</string>
+		<key>font</key>
+		<dict>
+			<key>name</key>
+			<string></string>
+			<key>size</key>
+			<string></string>
+		</dict>
+		<key>label</key>
+		<dict>
+			<key>textColor</key>
+			<string>#222222</string>
+			<key>backgroundColor</key>
+			<string>#222222</string>
+			<key>systemFont</key>
+			<dict>
+				<key>size</key>
+				<string>12</string>
+			</dict>
+			<key>font</key>
+			<dict>
+				<key>name</key>
+				<string>Helvetica</string>
+				<key>size</key>
+				<string>20</string>
+			</dict>
+		</dict>
+		<key>labelReference</key>
+		<string>@label</string>
+		<key>fontReference</key>
+		<string>@font</string>
+	</dict>
+</dict>
+</plist>
