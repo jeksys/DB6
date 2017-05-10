@@ -16,15 +16,15 @@ class DB6ThemeLoader {
         let dictionary = NSDictionary(contentsOfFile: filePath!)!
 
         //TODO: fix that part, load plist properly
-        if let fileUrl = Bundle.main.url(forResource: filename, withExtension: "plist"),
-            let data = try? Data(contentsOf: fileUrl) {
-            if let dictionary = try? PropertyListSerialization.propertyList(from: data, options: [], format: nil) as? [[String: Any]] {
-//                print(dictionary)
-            }
-            if let dictionary = try? PropertyListSerialization.propertyList(from: data, options: [], format: nil) as? [[String: String]] {
-//                print(dictionary)
-            }
-        }
+//        if let fileUrl = Bundle.main.url(forResource: filename, withExtension: "plist"),
+////            let data = try? Data(contentsOf: fileUrl) {
+////            if let dictionary = try? PropertyListSerialization.propertyList(from: data, options: [], format: nil) as? [[String: Any]] {
+//////                print(dictionary)
+////            }
+////            if let dictionary = try? PropertyListSerialization.propertyList(from: data, options: [], format: nil) as? [[String: String]] {
+//////                print(dictionary)
+////            }
+//        }
         
         for oneKey in dictionary.allKeys {
             if let key = oneKey as? String{

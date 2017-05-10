@@ -4,6 +4,10 @@
 <dict>
 	<key>Default</key>
 	<dict>
+		<key>double</key>
+		<string>3.14</string>
+		<key>float</key>
+		<string>2.71</string>
 		<key>integer</key>
 		<string>42</string>
 		<key>string</key>
@@ -14,20 +18,44 @@
 		<string>#222222</string>
 		<key>colorRGBA</key>
 		<string>200.200.200.50</string>
-		<key>colorVariable</key>
+		<key>colorReference</key>
 		<string>@colorHex</string>
-		<key>variable</key>
+		<key>stringReference</key>
 		<string>@string</string>
 		<key>intReference</key>
 		<string>@integer</string>
 		<key>font</key>
 		<dict>
 			<key>name</key>
-			<string></string>
+			<string>Helvetica</string>
 			<key>size</key>
-			<string></string>
+			<string>24</string>
 		</dict>
-		<key>label</key>
+		<key>systemFont</key>
+		<dict>
+			<key>size</key>
+			<string>20</string>
+		</dict>
+		<key>UILabel</key>
+		<dict>
+			<key>textColor</key>
+			<string>#222222</string>
+			<key>backgroundColor</key>
+			<string>#222222</string>
+			<key>systemFont</key>
+			<dict>
+				<key>size</key>
+				<string>12</string>
+			</dict>
+			<key>font</key>
+			<dict>
+				<key>name</key>
+				<string>Helvetica</string>
+				<key>size</key>
+				<string>20</string>
+			</dict>
+		</dict>
+		<key>UILabelReferences</key>
 		<dict>
 			<key>textColor</key>
 			<string>#222222</string>

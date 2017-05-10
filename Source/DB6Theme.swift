@@ -34,7 +34,7 @@ public class DB6Theme{
 fileprivate extension DB6Theme{
     
     static func colorWithHexString(hexString: String?) -> UIColor? {
-        if let hexString = hexString, let hex = Int(hexString, radix: 16){
+        if let hexString = hexString, let hex = Int(hexString.replacingOccurrences(of: "#", with: ""), radix: 16){
             return UIColor(red: CGFloat((hex >> 16) & 0xff) / 255.0, green: CGFloat((hex >> 8) & 0xff) / 255.0, blue: CGFloat(hex & 0xff) / 255.0, alpha: 1.0)
         }
         return nil
@@ -47,6 +47,8 @@ extension DB6Theme{
     
     subscript(key: String) -> Any? {
         get {
+            
+            //TODO: if the first one is @, find a key with 
             var obj = themeDictionary[key]
             if obj == nil {
                 obj = parentTheme?[key]
@@ -63,18 +65,16 @@ extension DB6Theme{
         return obj
     }
     
-    func bool(key: String) -> Bool? {
-        if let value = self[key] as? String{
-            switch value {
-            case "True", "true", "yes", "1":
-                return true
-            case "False", "false", "no", "0":
-                return false
-            default:
-                return nil
-            }
+    func bool(key: String) -> Bool {
+        guard let string = string(key: key) else{
+            return false
         }
-        return nil
+        switch string.lowercased() {
+        case "true", "yes", "1":
+            return true
+        default:
+            return false
+        }
     }
     
     func string(key: String) -> String? {
@@ -85,21 +85,30 @@ extension DB6Theme{
     }
     
     func integer(key: String) -> Int {
-        guard let value = self[key] as? Int else {
+        guard let string = string(key: key) else{
+            return 0
+        }
+        guard let value = Int(string) else {
             return 0
         }
         return value
     }
     
-    func float(key: String) -> CGFloat {
-        guard let value = self[key] as? CGFloat else {
+    func float(key: String) -> Float {
+        guard let string = string(key: key) else{
+            return 0
+        }
+        guard let value = Float(string) else {
             return 0
         }
         return value
     }
     
     func double(key: String) -> Double {
-        guard let value = self[key] as? Double else {
+        guard let string = string(key: key) else{
+            return 0
+        }
+        guard let value = Double(string) else {
             return 0
         }
         return value
@@ -122,7 +131,7 @@ extension DB6Theme{
             return cachedColor
         }
 
-        let colorString = string(key: key)
+        let colorString = string(key: key)?.replacingOccurrences(of: "#", with: "")
         let color: UIColor
         if let _color = DB6Theme.colorWithHexString(hexString: colorString){
             color = _color
@@ -161,16 +170,16 @@ extension DB6Theme{
 
     fileprivate static func font(dictionary: [String: Any]) -> UIFont? {
         
-        guard let fontSize = dictionary["size"] as? CGFloat else{
+        guard let fontString = dictionary["size"] as? String, let fontSize = Float(fontString) else{
             return nil
         }
         
         if let fontName = dictionary["name"] as? String{
-            if let font = UIFont(name: fontName, size: fontSize){
+            if let font = UIFont(name: fontName, size: CGFloat(fontSize)){
                 return font
             }
         }else{
-            return UIFont.systemFont(ofSize: fontSize)
+            return UIFont.systemFont(ofSize: CGFloat(fontSize))
         }
         
         return nil
