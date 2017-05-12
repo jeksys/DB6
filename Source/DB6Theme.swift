@@ -12,7 +12,6 @@ public class DB6Theme{
     static var `default`: DB6Theme?
     
     var name: String
-    var parentTheme: DB6Theme? = nil
     
     fileprivate let themeDictionary: [String: Any]
     fileprivate var colorCache = [String: UIColor]()
@@ -47,21 +46,18 @@ extension DB6Theme{
     
     subscript(key: String) -> Any? {
         get {
-            
-            //TODO: if the first one is @, find a key with 
-            var obj = themeDictionary[key]
-            if obj == nil {
-                obj = parentTheme?[key]
+            //TODO: if the first one is @, find a key with
+            let obj = themeDictionary[key]
+
+            if let stringValue = obj as? String, stringValue.hasPrefix("@"){
+                return self[stringValue.replacingOccurrences(of: "@", with: "")]
             }
             return obj
         }
     }
     
     func object(key: String) -> Any? {
-        var obj = themeDictionary[key]
-        if obj == nil {
-            obj = parentTheme?.object(key: key)
-        }
+        let obj = themeDictionary[key]
         return obj
     }
     
@@ -190,19 +186,24 @@ extension DB6Theme{
 extension DB6Theme{
     
     func update(label: UILabel, key: String){
-        if let labelValue = self[key] as? [String: Any]{
-            if let fontValue = labelValue["font"] as? [String: Any]{
-                if let font = DB6Theme.font(dictionary: fontValue){
-                    label.font = font
+        
+        let styles = key.components(separatedBy: " ")
+        for style in styles{
+            if let labelValue = self[style] as? [String: Any]{
+                if let fontValue = labelValue["font"] as? [String: Any]{
+                    if let font = DB6Theme.font(dictionary: fontValue){
+                        label.font = font
+                    }
+                }
+                if let colorString = labelValue["backgroundColor"] as? String, let color = DB6Theme.colorWithHexString(hexString: colorString){
+                    label.backgroundColor = color
+                }
+                if let colorString = labelValue["textColor"] as? String, let color = DB6Theme.colorWithHexString(hexString: colorString){
+                    label.textColor = color
                 }
             }
-            if let colorString = labelValue["backgroundColor"] as? String, let color = DB6Theme.colorWithHexString(hexString: colorString){
-                label.backgroundColor = color
-            }
-            if let colorString = labelValue["textColor"] as? String, let color = DB6Theme.colorWithHexString(hexString: colorString){
-                label.textColor = color
-            }
         }
+        
     }
     
 }

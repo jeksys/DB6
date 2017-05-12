@@ -9,7 +9,7 @@
 import XCTest
 @testable import DB6Demo
 
-class DB6DemoTests: XCTestCase {
+class DB6PrimitivesTests: XCTestCase {
 
     var themeLoader = DB6ThemeLoader(themeFilename: "DB6Demo")
     var theme = DB6Theme.default
@@ -32,14 +32,26 @@ class DB6DemoTests: XCTestCase {
     }
 
     func testString(){
-        let stringKey="string"
+        let stringKey = "string"
         let stringValue = theme?.string(key: stringKey)
         assert(stringValue == stringKey)
+    }
+
+    func testStringReference(){
+        let key = "string"
+        let stringValue = theme?.string(key: "\(key)Reference")
+        assert(stringValue == key)
     }
 
     func testInteger(){
         let key="integer"
         let value = theme?.integer(key: key)
+        assert(value == 42)
+    }
+
+    func testIntegerReference(){
+        let key="integer"
+        let value = theme?.integer(key: "\(key)Reference")
         assert(value == 42)
     }
 
@@ -49,9 +61,21 @@ class DB6DemoTests: XCTestCase {
         assert(value == 2.71)
     }
 
+    func testFloatReference(){
+        let key="float"
+        let value = theme?.float(key: "\(key)Reference")
+        assert(value == 2.71)
+    }
+
     func testDouble(){
         let key="double"
         let value = theme?.double(key: key)
+        assert(value == 3.14)
+    }
+
+    func testDoubleReference(){
+        let key="double"
+        let value = theme?.double(key: "\(key)Reference")
         assert(value == 3.14)
     }
 
@@ -60,32 +84,27 @@ class DB6DemoTests: XCTestCase {
         let value = theme?.bool(key: key)
         assert(value == true)
     }
-    
-    func testColor(){
-        let colorKey = "colorHex"
-        let colorValue = theme?.color(key: colorKey)
-        print(colorValue?.hexString() ?? "")
-        
-        assert(colorValue != nil)
 
+    func testBoolReference(){
+        let key="boolean"
+        let value = theme?.bool(key: "\(key)Reference")
+        assert(value == true)
     }
-    
-    func testUILabel(){
-        
-        let _ = DB6ThemeLoader(themeFilename: "DB6Demo")
-        let label = UILabel()
-        label.style = "UILabel"
-        print(label.font)
-        print(label.backgroundColor?.hexString() ?? "")
-        print(label.textColor?.hexString() ?? "")
+
+    func testColor(){
+        let key = "colorHex"
+        let value = theme?.color(key: key)
+        print(value?.hexString() ?? "")
+        assert(value != nil)
     }
-    
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+
+    func testColorReference(){
+        let key = "colorReference"
+        let value = theme?.color(key: "\(key)Reference")
+        print(value?.hexString() ?? "")
+        assert(value != nil)
     }
-    
+
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

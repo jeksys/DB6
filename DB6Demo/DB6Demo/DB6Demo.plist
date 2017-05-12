@@ -6,24 +6,30 @@
 	<dict>
 		<key>double</key>
 		<string>3.14</string>
+		<key>doubleReference</key>
+		<string>@double</string>
 		<key>float</key>
 		<string>2.71</string>
+		<key>floatReference</key>
+		<string>@float</string>
 		<key>integer</key>
 		<string>42</string>
+		<key>integerReference</key>
+		<string>@integer</string>
 		<key>string</key>
 		<string>string</string>
-		<key>boolean</key>
-		<string>true</string>
-		<key>colorHex</key>
-		<string>#222222</string>
-		<key>colorRGBA</key>
-		<string>200.200.200.50</string>
-		<key>colorReference</key>
-		<string>@colorHex</string>
 		<key>stringReference</key>
 		<string>@string</string>
-		<key>intReference</key>
-		<string>@integer</string>
+		<key>boolean</key>
+		<string>true</string>
+		<key>booleanReference</key>
+		<string>@boolean</string>
+		<key>colorHex</key>
+		<string>#222222</string>
+		<key>colorReference</key>
+		<string>@colorHex</string>
+		<key>colorRGBA</key>
+		<string>200.200.200.50</string>
 		<key>font</key>
 		<dict>
 			<key>name</key>
@@ -39,9 +45,9 @@
 		<key>UILabel</key>
 		<dict>
 			<key>textColor</key>
-			<string>#222222</string>
+			<string>#FFFFFF</string>
 			<key>backgroundColor</key>
-			<string>#222222</string>
+			<string>#3E5BA0</string>
 			<key>systemFont</key>
 			<dict>
 				<key>size</key>
@@ -54,27 +60,13 @@
 				<key>size</key>
 				<string>20</string>
 			</dict>
+		</dict>
+		<key>UILabel2</key>
+		<dict>
+			<key>backgroundColor</key>
+			<string>#E21313</string>
 		</dict>
 		<key>UILabelReferences</key>
-		<dict>
-			<key>textColor</key>
-			<string>#222222</string>
-			<key>backgroundColor</key>
-			<string>#222222</string>
-			<key>systemFont</key>
-			<dict>
-				<key>size</key>
-				<string>12</string>
-			</dict>
-			<key>font</key>
-			<dict>
-				<key>name</key>
-				<string>Helvetica</string>
-				<key>size</key>
-				<string>20</string>
-			</dict>
-		</dict>
-		<key>labelReference</key>
 		<string>@label</string>
 		<key>fontReference</key>
 		<string>@font</string>
