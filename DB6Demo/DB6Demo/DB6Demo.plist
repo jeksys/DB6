@@ -25,7 +25,7 @@
 		<key>booleanReference</key>
 		<string>@boolean</string>
 		<key>colorHex</key>
-		<string>#222222</string>
+		<string>222222</string>
 		<key>colorReference</key>
 		<string>@colorHex</string>
 		<key>colorRGBA</key>
