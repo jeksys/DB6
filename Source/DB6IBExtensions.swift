@@ -9,19 +9,19 @@
 import UIKit
 
 
-@IBDesignable extension UILabel{
-    
-    @IBInspectable override var style: String?{
-        get {
-            return nil
-        }
-        set{
-            if let key = newValue{
-                DB6Theme.default?.update(label: self, key: key)
-            }
-        }
-    }
-}
+//@IBDesignable extension UILabel{
+//    
+//    @IBInspectable override var style: String?{
+//        get {
+//            return nil
+//        }
+//        set{
+//            if let key = newValue{
+//                DB6Theme.default?.update(label: self, key: key)
+//            }
+//        }
+//    }
+//}
 
 @IBDesignable extension UIView{
     
@@ -31,40 +31,22 @@ import UIKit
         }
         set{
             if let key = newValue{
-                DB6Theme.default?.update(view: self, key: key)
+                DB6Theme.default?.apply(view: self, key: key)
             }
         }
     }
 }
 
-@IBDesignable extension UIButton{
-    
-    @IBInspectable override var style: String?{
-        get {
-            return nil
-        }
-        set{
-            if let key = newValue{
-                DB6Theme.default?.update(button: self, key: key)
-            }
-        }
-    }
-}
-
-extension UIColor{
-
-    public func hexString(_ includeAlpha: Bool = true) -> String {
-        var r: CGFloat = 0
-        var g: CGFloat = 0
-        var b: CGFloat = 0
-        var a: CGFloat = 0
-        self.getRed(&r, green: &g, blue: &b, alpha: &a)
-        
-        if (includeAlpha) {
-            return String(format: "#%02X%02X%02X%02X", Int(r * 255), Int(g * 255), Int(b * 255), Int(a * 255))
-        } else {
-            return String(format: "#%02X%02X%02X", Int(r * 255), Int(g * 255), Int(b * 255))
-        }
-    }
-    
-}
+//@IBDesignable extension UIButton{
+//    
+//    @IBInspectable override var style: String?{
+//        get {
+//            return nil
+//        }
+//        set{
+//            if let key = newValue{
+//                DB6Theme.default?.update(button: self, key: key)
+//            }
+//        }
+//    }
+//}

@@ -42,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		3179A29A1EC639C10096BD61 /* DB6UIKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB6UIKitTests.swift; sourceTree = "<group>"; };
+		31CBAD8B1ECB81C600F57628 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		31D8D04E1EBCFE4700461817 /* DB6Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DB6Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31D8D0511EBCFE4700461817 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31D8D0531EBCFE4700461817 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +114,7 @@
 				31D8D0511EBCFE4700461817 /* AppDelegate.swift */,
 				31D8D0531EBCFE4700461817 /* ViewController.swift */,
 				31D8D0841EBCFEC600461817 /* DB6Demo.plist */,
+				31CBAD8B1ECB81C600F57628 /* README.md */,
 				31D8D0551EBCFE4700461817 /* Main.storyboard */,
 				31D8D0581EBCFE4700461817 /* Assets.xcassets */,
 				31D8D05A1EBCFE4700461817 /* LaunchScreen.storyboard */,

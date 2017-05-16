@@ -157,7 +157,9 @@ extension DB6Theme{
                     return font
                 }
             }else{
-                return UIFont.systemFont(ofSize: fontSize)
+                let font = UIFont.systemFont(ofSize: fontSize)
+                fontCache[key] = font
+                return font
             }
 
         }
@@ -185,51 +187,82 @@ extension DB6Theme{
 
 extension DB6Theme{
     
-    func update(label view: UILabel, key: String){
+    fileprivate subscript(value: Any?) -> Any? {
+        get {
+            if let stringValue = value as? String, stringValue.hasPrefix("@"){
+                return self[stringValue.replacingOccurrences(of: "@", with: "")]
+            }
+            return value
+        }
+    }
+
+    func apply(view: Any, key: String){
+        switch view {
+        case let button as UIButton:
+            self.update(button: button, key: key)
+            
+        case let label as UILabel:
+            self.update(label: label, key: key)
+
+        case let view as UIView:
+            self.update(view: view, key: key)
+
+        default:
+            break
+        }
+    }
+    
+    func update(view: UIView, key: String){
         
         let styles = key.components(separatedBy: " ")
         for style in styles{
-            if let labelValue = self[style] as? [String: Any]{
-                if let fontValue = labelValue["font"] as? [String: Any]{
+            if let value = self[style] as? [String: Any]{
+                if let colorString = self[value["backgroundColor"]] as? String, let color = DB6Theme.colorWithHexString(hexString: colorString){
+                    view.backgroundColor = color
+                }
+                if let string = self[value["borderWidth"]] as? String, let value = Float(string){
+                    view.layer.borderWidth = CGFloat(value)
+                }
+                if let string = self[value["cornerRadius"]] as? String, let value = Float(string){
+                    view.layer.cornerRadius = CGFloat(value)
+                    view.clipsToBounds = true
+                }
+                if let string = self[value["borderColor"]] as? String, let color = DB6Theme.colorWithHexString(hexString: string){
+                    view.layer.borderColor = color.cgColor
+                }
+            }
+        }
+    }
+    
+    func update(label view: UILabel, key: String){
+        
+        self.update(view: view, key: key)
+        let styles = key.components(separatedBy: " ")
+        for style in styles{
+            if let value = self[style] as? [String: Any]{
+                if let fontValue = value["font"] as? [String: Any]{
                     if let font = DB6Theme.font(dictionary: fontValue){
                         view.font = font
                     }
                 }
-                if let colorString = labelValue["backgroundColor"] as? String, let color = DB6Theme.colorWithHexString(hexString: colorString){
-                    view.backgroundColor = color
-                }
-                if let colorString = labelValue["textColor"] as? String, let color = DB6Theme.colorWithHexString(hexString: colorString){
+                if let colorString = self[value["textColor"]] as? String, let color = DB6Theme.colorWithHexString(hexString: colorString){
                     view.textColor = color
                 }
             }
         }
-        
-    }
-
-    func update(view: UIView, key: String){
-
-        let styles = key.components(separatedBy: " ")
-        for style in styles{
-            if let labelValue = self[style] as? [String: Any]{
-                if let colorString = labelValue["backgroundColor"] as? String, let color = DB6Theme.colorWithHexString(hexString: colorString){
-                    view.backgroundColor = color
-                }
-            }
-        }
-        
     }
 
     func update(button view: UIButton, key: String){
         
+        self.update(view: view, key: key)
         let styles = key.components(separatedBy: " ")
         for style in styles{
-            if let labelValue = self[style] as? [String: Any]{
-                if let colorString = labelValue["backgroundColor"] as? String, let color = DB6Theme.colorWithHexString(hexString: colorString){
-                    view.backgroundColor = color
+            if let value = self[style] as? [String: Any]{
+                if let colorString = self[value["textColor"]] as? String, let color = DB6Theme.colorWithHexString(hexString: colorString){
+                    view.setTitleColor(color, for: .normal)
                 }
             }
         }
-        
     }
 
 }
