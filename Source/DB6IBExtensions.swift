@@ -8,9 +8,10 @@
 
 import UIKit
 
+
 @IBDesignable extension UILabel{
     
-    @IBInspectable var style: String?{
+    @IBInspectable override var style: String?{
         get {
             return nil
         }
@@ -22,6 +23,33 @@ import UIKit
     }
 }
 
+@IBDesignable extension UIView{
+    
+    @IBInspectable var style: String?{
+        get {
+            return nil
+        }
+        set{
+            if let key = newValue{
+                DB6Theme.default?.update(view: self, key: key)
+            }
+        }
+    }
+}
+
+@IBDesignable extension UIButton{
+    
+    @IBInspectable override var style: String?{
+        get {
+            return nil
+        }
+        set{
+            if let key = newValue{
+                DB6Theme.default?.update(button: self, key: key)
+            }
+        }
+    }
+}
 
 extension UIColor{
 

@@ -185,27 +185,53 @@ extension DB6Theme{
 
 extension DB6Theme{
     
-    func update(label: UILabel, key: String){
+    func update(label view: UILabel, key: String){
         
         let styles = key.components(separatedBy: " ")
         for style in styles{
             if let labelValue = self[style] as? [String: Any]{
                 if let fontValue = labelValue["font"] as? [String: Any]{
                     if let font = DB6Theme.font(dictionary: fontValue){
-                        label.font = font
+                        view.font = font
                     }
                 }
                 if let colorString = labelValue["backgroundColor"] as? String, let color = DB6Theme.colorWithHexString(hexString: colorString){
-                    label.backgroundColor = color
+                    view.backgroundColor = color
                 }
                 if let colorString = labelValue["textColor"] as? String, let color = DB6Theme.colorWithHexString(hexString: colorString){
-                    label.textColor = color
+                    view.textColor = color
                 }
             }
         }
         
     }
-    
+
+    func update(view: UIView, key: String){
+
+        let styles = key.components(separatedBy: " ")
+        for style in styles{
+            if let labelValue = self[style] as? [String: Any]{
+                if let colorString = labelValue["backgroundColor"] as? String, let color = DB6Theme.colorWithHexString(hexString: colorString){
+                    view.backgroundColor = color
+                }
+            }
+        }
+        
+    }
+
+    func update(button view: UIButton, key: String){
+        
+        let styles = key.components(separatedBy: " ")
+        for style in styles{
+            if let labelValue = self[style] as? [String: Any]{
+                if let colorString = labelValue["backgroundColor"] as? String, let color = DB6Theme.colorWithHexString(hexString: colorString){
+                    view.backgroundColor = color
+                }
+            }
+        }
+        
+    }
+
 }
 
 

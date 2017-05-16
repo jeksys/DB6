@@ -66,6 +66,11 @@
 			<key>backgroundColor</key>
 			<string>#E21313</string>
 		</dict>
+		<key>view</key>
+		<dict>
+			<key>backgroundColor</key>
+			<string>F0F0F0</string>
+		</dict>
 		<key>UILabelReferences</key>
 		<string>@label</string>
 		<key>fontReference</key>
