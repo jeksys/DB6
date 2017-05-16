@@ -177,7 +177,19 @@ extension DB6Theme{
                 return font
             }
         }else{
-            return UIFont.systemFont(ofSize: CGFloat(fontSize))
+            let fontStyle = dictionary["style"] as? String
+            
+            let font: UIFont
+            switch fontStyle {
+            case .some("bold"):
+                font = UIFont.boldSystemFont(ofSize: CGFloat(fontSize))
+            case .some("italic"):
+                font = UIFont.italicSystemFont(ofSize: CGFloat(fontSize))
+            default:
+                font = UIFont.systemFont(ofSize: CGFloat(fontSize))
+            }
+            
+            return font
         }
         
         return nil
@@ -260,6 +272,11 @@ extension DB6Theme{
             if let value = self[style] as? [String: Any]{
                 if let colorString = self[value["textColor"]] as? String, let color = DB6Theme.colorWithHexString(hexString: colorString){
                     view.setTitleColor(color, for: .normal)
+                }
+                if let fontValue = value["font"] as? [String: Any]{
+                    if let font = DB6Theme.font(dictionary: fontValue){
+                        view.titleLabel?.font = font
+                    }
                 }
             }
         }

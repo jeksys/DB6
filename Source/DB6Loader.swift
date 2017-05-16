@@ -15,7 +15,7 @@ class DB6ThemeLoader {
         let filePath = Bundle.main.path(forResource: filename, ofType: "plist")
         let dictionary = NSDictionary(contentsOfFile: filePath!)!
 
-        //TODO: fix that part, load plist properly
+        //TODO: fix that part, load plist via property list serialization
 //        if let fileUrl = Bundle.main.url(forResource: filename, withExtension: "plist"),
 ////            let data = try? Data(contentsOf: fileUrl) {
 ////            if let dictionary = try? PropertyListSerialization.propertyList(from: data, options: [], format: nil) as? [[String: Any]] {
@@ -39,11 +39,7 @@ class DB6ThemeLoader {
                 }
             }
         }
-//        for oneTheme in themes {
-//            if oneTheme != main {
-//                oneTheme.parentTheme = main
-//            }
-//        }
+        
     }
     
     func themeNamed(themeName: String) -> DB6Theme? {

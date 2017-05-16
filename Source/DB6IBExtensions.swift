@@ -8,21 +8,6 @@
 
 import UIKit
 
-
-//@IBDesignable extension UILabel{
-//    
-//    @IBInspectable override var style: String?{
-//        get {
-//            return nil
-//        }
-//        set{
-//            if let key = newValue{
-//                DB6Theme.default?.update(label: self, key: key)
-//            }
-//        }
-//    }
-//}
-
 @IBDesignable extension UIView{
     
     @IBInspectable var style: String?{
@@ -36,17 +21,3 @@ import UIKit
         }
     }
 }
-
-//@IBDesignable extension UIButton{
-//    
-//    @IBInspectable override var style: String?{
-//        get {
-//            return nil
-//        }
-//        set{
-//            if let key = newValue{
-//                DB6Theme.default?.update(button: self, key: key)
-//            }
-//        }
-//    }
-//}
