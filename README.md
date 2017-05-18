@@ -53,7 +53,7 @@ DB6 is available under the MIT license. See the LICENSE file for details.
 
 ## TODO 
 
-- [ ] Add variables
+- [x] Add variables
 - [ ] Add support for native plist types (Number, Boolean, Date)
 - [ ] Add support for plist dictionaries
 - [ ] Add support for plist arrays
