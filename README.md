@@ -55,8 +55,14 @@ DB6 is available under the MIT license. See the LICENSE file for details.
 
 [x] Add variables
 [] Add support for native plist types (Number, Boolean, Date)
+
 [] Add support for plist dictionaries
+
 [] Add support for plist arrays
+
 [] Add Cocoa pod installation
+
 [] Add theme switcher
+
 [] Add more UI components
+
