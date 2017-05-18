@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3113F5DE1ECE55AB00F9C18B /* DB6IBExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113F5DB1ECE55AB00F9C18B /* DB6IBExtensions.swift */; };
+		3113F5DF1ECE55AB00F9C18B /* DB6Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113F5DC1ECE55AB00F9C18B /* DB6Loader.swift */; };
+		3113F5E01ECE55AB00F9C18B /* DB6Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113F5DD1ECE55AB00F9C18B /* DB6Theme.swift */; };
+		3113F5E21ECE565400F9C18B /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 3113F5E11ECE565400F9C18B /* README.md */; };
+		3113F5E81ECE568600F9C18B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3113F5E61ECE568600F9C18B /* Info.plist */; };
 		3179A2981EC625B20096BD61 /* DB6Demo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31D8D0841EBCFEC600461817 /* DB6Demo.plist */; };
 		3179A2991EC625B30096BD61 /* DB6Demo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31D8D0841EBCFEC600461817 /* DB6Demo.plist */; };
 		3179A29B1EC639C10096BD61 /* DB6UIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3179A29A1EC639C10096BD61 /* DB6UIKitTests.swift */; };
@@ -17,10 +22,7 @@
 		31D8D05C1EBCFE4700461817 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31D8D05A1EBCFE4700461817 /* LaunchScreen.storyboard */; };
 		31D8D0671EBCFE4700461817 /* DB6PrimitivesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D8D0661EBCFE4700461817 /* DB6PrimitivesTests.swift */; };
 		31D8D0721EBCFE4800461817 /* DB6DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D8D0711EBCFE4700461817 /* DB6DemoUITests.swift */; };
-		31D8D0821EBCFE6200461817 /* DB6Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D8D0801EBCFE6200461817 /* DB6Loader.swift */; };
-		31D8D0831EBCFE6200461817 /* DB6Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D8D0811EBCFE6200461817 /* DB6Theme.swift */; };
 		31D8D0851EBCFEC600461817 /* DB6Demo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31D8D0841EBCFEC600461817 /* DB6Demo.plist */; };
-		31D8D0891EBD2FC900461817 /* DB6IBExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D8D0881EBD2FC900461817 /* DB6IBExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +43,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3113F5DB1ECE55AB00F9C18B /* DB6IBExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB6IBExtensions.swift; sourceTree = "<group>"; };
+		3113F5DC1ECE55AB00F9C18B /* DB6Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB6Loader.swift; sourceTree = "<group>"; };
+		3113F5DD1ECE55AB00F9C18B /* DB6Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB6Theme.swift; sourceTree = "<group>"; };
+		3113F5E11ECE565400F9C18B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
+		3113F5E61ECE568600F9C18B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../DB6/Info.plist; sourceTree = "<group>"; };
+		3113F5E71ECE568600F9C18B /* SwiftyConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwiftyConfiguration.h; path = ../../DB6/SwiftyConfiguration.h; sourceTree = "<group>"; };
 		3179A29A1EC639C10096BD61 /* DB6UIKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB6UIKitTests.swift; sourceTree = "<group>"; };
-		31CBAD8B1ECB81C600F57628 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		31D8D04E1EBCFE4700461817 /* DB6Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DB6Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31D8D0511EBCFE4700461817 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31D8D0531EBCFE4700461817 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,10 +63,7 @@
 		31D8D06D1EBCFE4700461817 /* DB6DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DB6DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31D8D0711EBCFE4700461817 /* DB6DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB6DemoUITests.swift; sourceTree = "<group>"; };
 		31D8D0731EBCFE4800461817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		31D8D0801EBCFE6200461817 /* DB6Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB6Loader.swift; sourceTree = "<group>"; };
-		31D8D0811EBCFE6200461817 /* DB6Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB6Theme.swift; sourceTree = "<group>"; };
 		31D8D0841EBCFEC600461817 /* DB6Demo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DB6Demo.plist; sourceTree = "<group>"; };
-		31D8D0881EBD2FC900461817 /* DB6IBExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB6IBExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3113F5DA1ECE55AB00F9C18B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3113F5DB1ECE55AB00F9C18B /* DB6IBExtensions.swift */,
+				3113F5DC1ECE55AB00F9C18B /* DB6Loader.swift */,
+				3113F5DD1ECE55AB00F9C18B /* DB6Theme.swift */,
+			);
+			name = Classes;
+			path = ../../DB6/Classes;
+			sourceTree = "<group>";
+		};
 		31D8D0451EBCFE4700461817 = {
 			isa = PBXGroup;
 			children = (
@@ -110,14 +125,16 @@
 		31D8D0501EBCFE4700461817 /* DB6Demo */ = {
 			isa = PBXGroup;
 			children = (
-				31D8D07F1EBCFE6200461817 /* Source */,
+				3113F5DA1ECE55AB00F9C18B /* Classes */,
+				3113F5E61ECE568600F9C18B /* Info.plist */,
+				3113F5E71ECE568600F9C18B /* SwiftyConfiguration.h */,
 				31D8D0511EBCFE4700461817 /* AppDelegate.swift */,
 				31D8D0531EBCFE4700461817 /* ViewController.swift */,
 				31D8D0841EBCFEC600461817 /* DB6Demo.plist */,
-				31CBAD8B1ECB81C600F57628 /* README.md */,
 				31D8D0551EBCFE4700461817 /* Main.storyboard */,
 				31D8D0581EBCFE4700461817 /* Assets.xcassets */,
 				31D8D05A1EBCFE4700461817 /* LaunchScreen.storyboard */,
+				3113F5E11ECE565400F9C18B /* README.md */,
 				31D8D05D1EBCFE4700461817 /* Info.plist */,
 			);
 			path = DB6Demo;
@@ -140,17 +157,6 @@
 				31D8D0731EBCFE4800461817 /* Info.plist */,
 			);
 			path = DB6DemoUITests;
-			sourceTree = "<group>";
-		};
-		31D8D07F1EBCFE6200461817 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				31D8D0801EBCFE6200461817 /* DB6Loader.swift */,
-				31D8D0811EBCFE6200461817 /* DB6Theme.swift */,
-				31D8D0881EBD2FC900461817 /* DB6IBExtensions.swift */,
-			);
-			name = Source;
-			path = ../../Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +272,7 @@
 				31D8D0851EBCFEC600461817 /* DB6Demo.plist in Resources */,
 				31D8D05C1EBCFE4700461817 /* LaunchScreen.storyboard in Resources */,
 				31D8D0591EBCFE4700461817 /* Assets.xcassets in Resources */,
+				3113F5E81ECE568600F9C18B /* Info.plist in Resources */,
 				31D8D0571EBCFE4700461817 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,11 +300,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31D8D0831EBCFE6200461817 /* DB6Theme.swift in Sources */,
-				31D8D0891EBD2FC900461817 /* DB6IBExtensions.swift in Sources */,
+				3113F5E21ECE565400F9C18B /* README.md in Sources */,
+				3113F5E01ECE55AB00F9C18B /* DB6Theme.swift in Sources */,
 				31D8D0541EBCFE4700461817 /* ViewController.swift in Sources */,
-				31D8D0821EBCFE6200461817 /* DB6Loader.swift in Sources */,
+				3113F5DF1ECE55AB00F9C18B /* DB6Loader.swift in Sources */,
 				31D8D0521EBCFE4700461817 /* AppDelegate.swift in Sources */,
+				3113F5DE1ECE55AB00F9C18B /* DB6IBExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
