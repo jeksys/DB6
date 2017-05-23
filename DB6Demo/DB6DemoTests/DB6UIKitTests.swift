@@ -30,8 +30,8 @@ class DB6UIKitTests: XCTestCase {
         let label = UILabel()
         label.style = "UILabel"
         print(label.font)
-        print(label.backgroundColor?.hexString() ?? "")
-        print(label.textColor?.hexString() ?? "")
+//        print(label.backgroundColor?.hexString() ?? "")
+//        print(label.textColor?.hexString() ?? "")
     }
     
     

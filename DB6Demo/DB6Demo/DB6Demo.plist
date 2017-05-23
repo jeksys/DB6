@@ -5,14 +5,20 @@
 	<key>Default</key>
 	<dict>
 		<key>double</key>
+		<real>3.14</real>
+		<key>doubleString</key>
 		<string>3.14</string>
 		<key>doubleReference</key>
 		<string>@double</string>
 		<key>float</key>
+		<real>2.71</real>
+		<key>floatString</key>
 		<string>2.71</string>
 		<key>floatReference</key>
 		<string>@float</string>
 		<key>integer</key>
+		<integer>42</integer>
+		<key>integerString</key>
 		<string>42</string>
 		<key>integerReference</key>
 		<string>@integer</string>
@@ -21,6 +27,8 @@
 		<key>stringReference</key>
 		<string>@string</string>
 		<key>boolean</key>
+		<true/>
+		<key>booleanString</key>
 		<string>true</string>
 		<key>booleanReference</key>
 		<string>@boolean</string>

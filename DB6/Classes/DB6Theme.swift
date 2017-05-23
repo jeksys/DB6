@@ -62,15 +62,20 @@ extension DB6Theme{
     }
     
     func bool(key: String) -> Bool {
-        guard let string = string(key: key) else{
-            return false
+        
+        guard let value = self[key] as? Bool else{
+            guard let string = string(key: key) else{
+                return false
+            }
+            switch string.lowercased() {
+            case "true", "yes", "1":
+                return true
+            default:
+                return false
+            }
         }
-        switch string.lowercased() {
-        case "true", "yes", "1":
-            return true
-        default:
-            return false
-        }
+        
+        return value
     }
     
     func string(key: String) -> String? {
@@ -81,30 +86,30 @@ extension DB6Theme{
     }
     
     func integer(key: String) -> Int {
-        guard let string = string(key: key) else{
-            return 0
-        }
-        guard let value = Int(string) else {
+        guard let value = self[key] as? Int else{
+            if let string = string(key: key), let value = Int(string){
+                return value
+            }
             return 0
         }
         return value
     }
     
     func float(key: String) -> Float {
-        guard let string = string(key: key) else{
-            return 0
-        }
-        guard let value = Float(string) else {
+        guard let value = self[key] as? Float else{
+            if let string = string(key: key), let value = Float(string){
+                return value
+            }
             return 0
         }
         return value
     }
     
     func double(key: String) -> Double {
-        guard let string = string(key: key) else{
-            return 0
-        }
-        guard let value = Double(string) else {
+        guard let value = self[key] as? Double else{
+            if let string = string(key: key), let value = Double(string){
+                return value
+            }
             return 0
         }
         return value
@@ -278,6 +283,10 @@ extension DB6Theme{
                         view.titleLabel?.font = font
                     }
                 }
+                if let kern = self[value["kern"]] as? Float{
+                    view.kern(kerningValue: CGFloat(kern))
+                }
+
             }
         }
     }

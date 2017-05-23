@@ -49,6 +49,12 @@ class DB6PrimitivesTests: XCTestCase {
         assert(value == 42)
     }
 
+    func testIntegerString(){
+        let key="integerString"
+        let value = theme?.integer(key: key)
+        assert(value == 42)
+    }
+
     func testIntegerReference(){
         let key="integer"
         let value = theme?.integer(key: "\(key)Reference")
@@ -61,6 +67,12 @@ class DB6PrimitivesTests: XCTestCase {
         assert(value == 2.71)
     }
 
+    func testFloatString(){
+        let key="floatString"
+        let value = theme?.float(key: key)
+        assert(value == 2.71)
+    }
+    
     func testFloatReference(){
         let key="float"
         let value = theme?.float(key: "\(key)Reference")
@@ -73,6 +85,12 @@ class DB6PrimitivesTests: XCTestCase {
         assert(value == 3.14)
     }
 
+    func testDoubleString(){
+        let key="doubleString"
+        let value = theme?.double(key: key)
+        assert(value == 3.14)
+    }
+    
     func testDoubleReference(){
         let key="double"
         let value = theme?.double(key: "\(key)Reference")
@@ -85,6 +103,12 @@ class DB6PrimitivesTests: XCTestCase {
         assert(value == true)
     }
 
+    func testBoolString(){
+        let key="booleanString"
+        let value = theme?.bool(key: key)
+        assert(value == true)
+    }
+    
     func testBoolReference(){
         let key="boolean"
         let value = theme?.bool(key: "\(key)Reference")
@@ -94,14 +118,14 @@ class DB6PrimitivesTests: XCTestCase {
     func testColor(){
         let key = "colorHex"
         let value = theme?.color(key: key)
-        print(value?.hexString() ?? "")
+//        print(value?.hexString() ?? "")
         assert(value != nil)
     }
 
     func testColorReference(){
         let key = "colorReference"
         let value = theme?.color(key: "\(key)Reference")
-        print(value?.hexString() ?? "")
+//        print(value?.hexString() ?? "")
         assert(value != nil)
     }
 
