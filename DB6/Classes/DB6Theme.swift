@@ -204,6 +204,19 @@ extension DB6Theme{
 
 extension DB6Theme{
     
+    fileprivate func kern(button: UIButton, kerningValue:CGFloat) {
+        let attributedText =  NSAttributedString(string: button.titleLabel!.text!, attributes: [NSKernAttributeName:kerningValue, NSFontAttributeName:button.titleLabel!.font, NSForegroundColorAttributeName:button.titleLabel!.textColor])
+        button.setAttributedTitle(attributedText, for: .normal)
+    }
+
+    fileprivate func kern(label: UILabel, kerningValue:CGFloat) {
+        label.attributedText =  NSAttributedString(string: label.text ?? "", attributes: [NSKernAttributeName:kerningValue, NSFontAttributeName:font, NSForegroundColorAttributeName:label.textColor])
+    }
+
+}
+
+extension DB6Theme{
+    
     fileprivate subscript(value: Any?) -> Any? {
         get {
             if let stringValue = value as? String, stringValue.hasPrefix("@"){
@@ -265,6 +278,9 @@ extension DB6Theme{
                 if let colorString = self[value["textColor"]] as? String, let color = DB6Theme.colorWithHexString(hexString: colorString){
                     view.textColor = color
                 }
+                if let kern = self[value["kern"]] as? Float{
+                    self.kern(label: view, kerningValue: CGFloat(kern))
+                }
             }
         }
     }
@@ -284,9 +300,8 @@ extension DB6Theme{
                     }
                 }
                 if let kern = self[value["kern"]] as? Float{
-                    view.kern(kerningValue: CGFloat(kern))
+                    self.kern(button: view, kerningValue: CGFloat(kern))
                 }
-
             }
         }
     }
