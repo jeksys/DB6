@@ -205,12 +205,21 @@ extension DB6Theme{
 extension DB6Theme{
     
     fileprivate func kern(button: UIButton, kerningValue:CGFloat) {
-        let attributedText =  NSAttributedString(string: button.titleLabel!.text!, attributes: [NSKernAttributeName:kerningValue, NSFontAttributeName:button.titleLabel!.font, NSForegroundColorAttributeName:button.titleLabel!.textColor])
-        button.setAttributedTitle(attributedText, for: .normal)
+        
+        let options: [UIControlState] = [.normal, .selected, .highlighted]
+        for state in options{
+            if let color = button.titleColor(for: state), let text = button.title(for: state), let font = button.titleLabel?.font{
+                let attributedText =  NSAttributedString(string: text, attributes: [NSKernAttributeName:kerningValue, NSFontAttributeName:font, NSForegroundColorAttributeName:color])
+                button.setAttributedTitle(attributedText, for: state)
+            }
+            
+        }
     }
 
     fileprivate func kern(label: UILabel, kerningValue:CGFloat) {
-        label.attributedText =  NSAttributedString(string: label.text ?? "", attributes: [NSKernAttributeName:kerningValue, NSFontAttributeName:font, NSForegroundColorAttributeName:label.textColor])
+        if let text = label.text{
+            label.attributedText =  NSAttributedString(string: label.text ?? "", attributes: [NSKernAttributeName:kerningValue, NSFontAttributeName:font, NSForegroundColorAttributeName:label.textColor])
+        }
     }
 
 }
