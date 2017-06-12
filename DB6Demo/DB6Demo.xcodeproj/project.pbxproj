@@ -10,7 +10,6 @@
 		3113F5DE1ECE55AB00F9C18B /* DB6IBExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113F5DB1ECE55AB00F9C18B /* DB6IBExtensions.swift */; };
 		3113F5DF1ECE55AB00F9C18B /* DB6Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113F5DC1ECE55AB00F9C18B /* DB6Loader.swift */; };
 		3113F5E01ECE55AB00F9C18B /* DB6Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3113F5DD1ECE55AB00F9C18B /* DB6Theme.swift */; };
-		3113F5E21ECE565400F9C18B /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 3113F5E11ECE565400F9C18B /* README.md */; };
 		3113F5E81ECE568600F9C18B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3113F5E61ECE568600F9C18B /* Info.plist */; };
 		3179A2981EC625B20096BD61 /* DB6Demo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31D8D0841EBCFEC600461817 /* DB6Demo.plist */; };
 		3179A2991EC625B30096BD61 /* DB6Demo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31D8D0841EBCFEC600461817 /* DB6Demo.plist */; };
@@ -300,7 +299,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3113F5E21ECE565400F9C18B /* README.md in Sources */,
 				3113F5E01ECE55AB00F9C18B /* DB6Theme.swift in Sources */,
 				31D8D0541EBCFE4700461817 /* ViewController.swift in Sources */,
 				3113F5DF1ECE55AB00F9C18B /* DB6Loader.swift in Sources */,

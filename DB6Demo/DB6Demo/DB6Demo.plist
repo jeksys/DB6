@@ -38,6 +38,22 @@
 		<string>@colorHex</string>
 		<key>colorRGBA</key>
 		<string>200.200.200.50</string>
+		<key>loginButton</key>
+		<dict>
+			<key>kern</key>
+			<integer>2</integer>
+			<key>cornerRadius</key>
+			<string>3</string>
+			<key>backgroundColor</key>
+			<string>@cwbBlue</string>
+			<key>textColor</key>
+			<string>FFFFFF</string>
+			<key>font</key>
+			<dict>
+				<key>style</key>
+				<string>bold</string>
+			</dict>
+		</dict>
 		<key>font</key>
 		<dict>
 			<key>name</key>

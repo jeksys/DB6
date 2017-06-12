@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "DB6"
-  s.version      = "0.1"
+  s.version      = "0.1.0"
   s.summary      = "DB6 is App Appearance Configuration via Plist"
   s.homepage     = "https://github.com/jeksys/DB6"
   s.license      = "MIT"
