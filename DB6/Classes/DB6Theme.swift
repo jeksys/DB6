@@ -218,7 +218,7 @@ extension DB6Theme{
 
     fileprivate func kern(label: UILabel, kerningValue:CGFloat) {
         if let text = label.text{
-            label.attributedText =  NSAttributedString(string: label.text ?? "", attributes: [NSKernAttributeName:kerningValue, NSFontAttributeName:font, NSForegroundColorAttributeName:label.textColor])
+            label.attributedText =  NSAttributedString(string: text, attributes: [NSKernAttributeName:kerningValue, NSFontAttributeName:font, NSForegroundColorAttributeName:label.textColor])
         }
     }
 
