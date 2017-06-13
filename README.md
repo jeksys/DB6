@@ -84,16 +84,17 @@ You can find a demo app, which explain how the library works via some sample cod
 ### Carthage - not available yet
 `DB6` is available through [Carthage](https://github.com/Carthage/Carthage). To install it, simply add the following line to your Cartfile:
 
-```ruby
+``````swift
+
 github "jeksys/DB6"
 ```
 
-### CocoaPods - not available yet
+### CocoaPods
 
 `DB6` is available on CocoaPods.
 Add the following to your `Podfile`:
 
-```ruby
+```swift
 pod 'DB6'
 ```
 
@@ -112,7 +113,7 @@ DB6 is available under the MIT license. See the LICENSE file for details.
 - [x] Add support for native plist types (Number, Boolean, Date)
 - [ ] Add support for plist dictionaries
 - [ ] Add support for plist arrays
-- [ ] Add Cocoa pod support
+- [x] Add Cocoa pod support
 - [ ] Add Swift package manager support
 - [ ] Add Carthage support
 - [ ] Add theme switcher
