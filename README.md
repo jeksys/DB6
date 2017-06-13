@@ -6,52 +6,45 @@
 [![Blog](https://img.shields.io/badge/Blog-jeksys.github.io-blue.svg)](https://jeksys.github.io/)
 ![MadeWithLove](https://img.shields.io/badge/Made%20with%20%E2%9D%A4-Canada-red.svg)
 
-App Configuration via Plist, inspired by original DB5 library and https://github.com/tombenner/nui
+App Configuration via Plist, inspired by original [DB5 library](https://github.com/brentsimmons/DB5) and [NUI](https://github.com/tombenner/nui)
 
-by Eugene(https://jeksys.github.io/)
+by [Eugene](https://jeksys.github.io/)
 
 ## Usage
 
-##### 1. Create Plist
+#### 1. Create Plist
 Add plist file to your project or copy a demo file from the demo project.
 
-##### 2. Define your plist keys
+#### 2. Define your plist keys
 Add keys and values to your plist file
 
-
-## How it works
-
-#### Initialize theme manager
+#### 3. Initialize theme manager
 
 ```swift
 var themeLoader = DB6ThemeLoader(themeFilename: "DB6Demo")
 var theme = DB6Theme.default
 ```
 
-#### Read primitive values
+#### 4. Read primitive values
 
 ```swift
 let stringKey = "string"
-let stringValue = theme?.string(key: stringKey)
+let stringValue: String? = theme?.string(key: stringKey)
 
-let key="integer"
-let value = theme?.integer(key: key)
+let key = "integer"
+let value: Int? = theme?.integer(key: key)
 
+let key = "float"
+let value: Float = theme?.float(key: key)
 
-let key="float"
-let value = theme?.float(key: key)
+let key = "double"
+let value: Double = theme?.double(key: key)
 
-
-let key="double"
-let value = theme?.double(key: key)
-
-
-let key="boolean"
-let value = theme?.bool(key: key)
-
+let key = "boolean"
+let value: Bool = theme?.bool(key: key)
 
 let key = "colorHex"
-let value = theme?.color(key: key)
+let value: UIColor = theme?.color(key: key)
 ```
 
 #### Read values by reference
@@ -76,18 +69,10 @@ theme.update(button: button, key: style)
 
 
 ## Demo App
-You can find a demo app, which explain how the library works via some sample code and unit tests.
+The demo app is very simple and straightforward, it explain how the library works via some sample code and unit tests.
 
 
 ## Installation
-
-### Carthage - not available yet
-`DB6` is available through [Carthage](https://github.com/Carthage/Carthage). To install it, simply add the following line to your Cartfile:
-
-``````swift
-
-github "jeksys/DB6"
-```
 
 ### CocoaPods
 
@@ -98,9 +83,12 @@ Add the following to your `Podfile`:
 pod 'DB6'
 ```
 
-### Manually
-Just add the Classes folder to your project.
+### Carthage - not available yet
+`DB6` is available through [Carthage](https://github.com/Carthage/Carthage). To install it, simply add the following line to your Cartfile:
 
+```swift
+github "jeksys/DB6"
+```
 
 ## License
 
