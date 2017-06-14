@@ -6,14 +6,14 @@
 [![Blog](https://img.shields.io/badge/Blog-jeksys.github.io-blue.svg)](https://jeksys.github.io/)
 ![MadeWithLove](https://img.shields.io/badge/Made%20with%20%E2%9D%A4-Canada-red.svg)
 
-App Configuration via Plist, inspired by original [DB5 library](https://github.com/brentsimmons/DB5) and [NUI](https://github.com/tombenner/nui)
+App Configuration via Plist, inspired by original [DB5 library](https://github.com/brentsimmons/DB5) and [NUI](https://github.com/tombenner/nui). By storing primitive values, fonts, styles for UI controls you can easily configure appearance of your app. 
 
 by [Eugene](https://jeksys.github.io/)
 
 ## Usage
 
 #### 1. Create Plist
-Add plist file to your project or copy a demo file from the demo project. By storing primitive values, fonts, styles for UI controls you can easily configure appearance of your app. 
+Add plist file to your project or copy a demo file from the demo project. 
 
 #### 2. Define your plist keys
 Add keys and values to your plist file
