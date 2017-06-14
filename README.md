@@ -13,7 +13,7 @@ by [Eugene](https://jeksys.github.io/)
 ## Usage
 
 #### 1. Create Plist
-Add plist file to your project or copy a demo file from the demo project.
+Add plist file to your project or copy a demo file from the demo project. By storing primitive values, fonts, styles for UI controls you can easily configure appearance of your app. 
 
 #### 2. Define your plist keys
 Add keys and values to your plist file
