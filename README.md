@@ -8,7 +8,6 @@
 
 App Configuration via Plist, inspired by original [DB5 library](https://github.com/brentsimmons/DB5) and [NUI](https://github.com/tombenner/nui). By storing primitive values, fonts, styles for UI controls you can easily configure appearance of your app. 
 
-by [Eugene](https://jeksys.github.io/)
 
 ## Usage
 
