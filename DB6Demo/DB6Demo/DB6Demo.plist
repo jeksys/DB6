@@ -38,6 +38,8 @@
 		<string>@colorHex</string>
 		<key>colorRGBA</key>
 		<string>200.200.200.50</string>
+		<key>randomColor</key>
+		<string>2159E0</string>
 		<key>loginButton</key>
 		<dict>
 			<key>kern</key>
@@ -45,7 +47,7 @@
 			<key>cornerRadius</key>
 			<string>3</string>
 			<key>backgroundColor</key>
-			<string>@cwbBlue</string>
+			<string>@randomColor</string>
 			<key>textColor</key>
 			<string>FFFFFF</string>
 			<key>font</key>
