@@ -60,10 +60,11 @@ You can style your UI controls with a dictionary in plist file. See the demo pro
 
 ![](./Images/2_plistUIButton.png)
 
-You can add multiple styles in the Interface Builder. There is "style" custom  attribute, or you can do it programmatically. 
+You can add multiple styles in the Interface Builder. There is "style" custom  attribute.
 
 ![](./Images/3_ib_uibutton.png)
 
+You can add multiple styles to your controll programmatically. 
 
 ```swift
 let style = "loginbutton"
@@ -71,6 +72,28 @@ let button = UIButton()
 
 theme.update(button: button, key: style)
 ```
+
+## Supported UI controls and attributes
+
+#### 1. UIView
+
+- backgroundColor
+- borderWidth
+- cornerRadius
+- borderColor
+
+
+#### 2. UILabel
+
+- font
+- textColor
+- kern
+
+
+#### 3. UIButton
+- font
+- textColor
+- kern
 
 
 ## Demo App
