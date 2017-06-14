@@ -17,6 +17,7 @@ Add plist file to your project or copy a demo file from the demo project.
 
 #### 2. Define your plist keys
 Add keys and values to your plist file
+![](./Images/1_plistValues.png)
 
 #### 3. Initialize theme manager
 
@@ -55,9 +56,10 @@ The theme manager allows you to read not only values from the plist file, but al
 #### Style your UI controls. 
 
 You can style your UI controls with a dictionary in plist file. See the demo project. 
+![](./Images/2_plistUIButton.png)
 
-You add multiple styles in the Interface Builder. There is "style" custom  attribute. 
-Or you can do it programmatically. 
+You can add multiple styles in the Interface Builder. There is "style" custom  attribute, or you can do it programmatically. 
+![](./Images/3_ib_uibutton.png)
 
 
 ```swift
@@ -69,7 +71,7 @@ theme.update(button: button, key: style)
 
 
 ## Demo App
-The demo app is very simple and straightforward, it explain how the library works via some sample code and unit tests.
+The demo app is very simple and straightforward, it explains how the library works via some sample code and unit tests.
 
 
 ## Installation
