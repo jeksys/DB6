@@ -106,3 +106,4 @@ DB6 is available under the MIT license. See the LICENSE file for details.
 - [ ] Add Carthage support
 - [ ] Add theme switcher
 - [ ] Add more UI components
+- [ ] Add RGB color support
