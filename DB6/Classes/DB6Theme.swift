@@ -151,27 +151,12 @@ extension DB6Theme{
         }
         
         if let fontDictionary = self[key] as? [String: Any]{
-            
-            guard let fontSize = fontDictionary["size"] as? CGFloat else{
-                return defaults.font
-            }
-            
-            if let fontName = fontDictionary["name"] as? String{
-                if let font = UIFont(name: fontName, size: fontSize){
-                    fontCache[key] = font
-                    return font
-                }
-            }else{
-                let font = UIFont.systemFont(ofSize: fontSize)
-                fontCache[key] = font
-                return font
-            }
-
+            return DB6Theme.font(withDictionary: fontDictionary) ?? defaults.font
         }
         return defaults.font
     }
 
-    fileprivate static func font(dictionary: [String: Any]) -> UIFont? {
+    fileprivate static func font(withDictionary dictionary: [String: Any]) -> UIFont? {
         
         guard let fontString = dictionary["size"] as? String, let fontSize = Float(fontString) else{
             return nil
@@ -280,7 +265,7 @@ extension DB6Theme{
         for style in styles{
             if let value = self[style] as? [String: Any]{
                 if let fontValue = value["font"] as? [String: Any]{
-                    if let font = DB6Theme.font(dictionary: fontValue){
+                    if let font = DB6Theme.font(withDictionary: fontValue){
                         view.font = font
                     }
                 }
@@ -304,7 +289,7 @@ extension DB6Theme{
                     view.setTitleColor(color, for: .normal)
                 }
                 if let fontValue = value["font"] as? [String: Any]{
-                    if let font = DB6Theme.font(dictionary: fontValue){
+                    if let font = DB6Theme.font(withDictionary: fontValue){
                         view.titleLabel?.font = font
                     }
                 }
