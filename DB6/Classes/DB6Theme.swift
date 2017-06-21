@@ -207,6 +207,15 @@ extension DB6Theme{
         }
     }
 
+    fileprivate func spacing(label: UILabel, spacing:CGFloat) {
+        if let text = label.text{
+            let attributedString =  NSMutableAttributedString(attributedString: label.attributedText ?? NSMutableAttributedString(string: text))
+            attributedString.addAttribute(NSKernAttributeName, value: spacing, range: NSMakeRange(0, attributedString.length))
+            label.attributedText =  attributedString
+        }
+    }
+    
+
 }
 
 extension DB6Theme{
