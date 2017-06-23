@@ -189,32 +189,26 @@ extension DB6Theme{
 
 extension DB6Theme{
     
-    fileprivate func kern(button: UIButton, kerningValue:CGFloat) {
+    fileprivate func kern(button: UIButton, kern:CGFloat) {
         
         let options: [UIControlState] = [.normal, .selected, .highlighted]
         for state in options{
             if let color = button.titleColor(for: state), let text = button.title(for: state), let font = button.titleLabel?.font{
-                let attributedText =  NSAttributedString(string: text, attributes: [NSKernAttributeName:kerningValue, NSFontAttributeName:font, NSForegroundColorAttributeName:color])
+                let attributedText =  NSAttributedString(string: text, attributes: [NSKernAttributeName:kern, NSFontAttributeName:font, NSForegroundColorAttributeName:color])
                 button.setAttributedTitle(attributedText, for: state)
             }
             
         }
     }
 
-    fileprivate func kern(label: UILabel, kerningValue:CGFloat) {
-        if let text = label.text{
-            label.attributedText =  NSAttributedString(string: text, attributes: [NSKernAttributeName:kerningValue, NSFontAttributeName:font, NSForegroundColorAttributeName:label.textColor])
-        }
-    }
-
-    fileprivate func spacing(label: UILabel, spacing:CGFloat) {
+    // kern or spacing in Sketch
+    fileprivate func kern(label: UILabel, kern:CGFloat) {
         if let text = label.text{
             let attributedString =  NSMutableAttributedString(attributedString: label.attributedText ?? NSMutableAttributedString(string: text))
-            attributedString.addAttribute(NSKernAttributeName, value: spacing, range: NSMakeRange(0, attributedString.length))
+            attributedString.addAttribute(NSKernAttributeName, value: kern, range: NSMakeRange(0, attributedString.length))
             label.attributedText =  attributedString
         }
     }
-    
 
 }
 
@@ -282,7 +276,7 @@ extension DB6Theme{
                     view.textColor = color
                 }
                 if let kern = self[value["kern"]] as? Float{
-                    self.kern(label: view, kerningValue: CGFloat(kern))
+                    self.kern(label: view, kern: CGFloat(kern))
                 }
             }
         }
@@ -303,7 +297,7 @@ extension DB6Theme{
                     }
                 }
                 if let kern = self[value["kern"]] as? Float{
-                    self.kern(button: view, kerningValue: CGFloat(kern))
+                    self.kern(button: view, kern: CGFloat(kern))
                 }
             }
         }
