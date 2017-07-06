@@ -235,6 +235,9 @@ extension DB6Theme{
             self.update(view: view, key: key)
 
         default:
+            if let view = view as? UIView{
+                self.update(view: view, key: key)
+            }
             break
         }
     }
@@ -302,7 +305,11 @@ extension DB6Theme{
             }
         }
     }
-
+    
+    func update(textField view: UITextField, key: String){
+        self.update(view: view, key: key)
+    }
+    
 }
 
 
