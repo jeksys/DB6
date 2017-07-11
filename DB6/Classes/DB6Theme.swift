@@ -209,6 +209,11 @@ extension DB6Theme{
             label.attributedText =  attributedString
         }
     }
+    
+    fileprivate func leftOffset(textField: UITextField, offset: CGFloat) {
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: offset, height: textField.frame.height))
+        textField.leftViewMode = .always
+    }
 
 }
 
@@ -231,9 +236,13 @@ extension DB6Theme{
         case let label as UILabel:
             self.update(label: label, key: key)
 
+        case let view as UITextField:
+            self.update(textField: view, key: key)
+            
+            // default case
         case let view as UIView:
             self.update(view: view, key: key)
-
+            
         default:
             if let view = view as? UIView{
                 self.update(view: view, key: key)
@@ -307,7 +316,16 @@ extension DB6Theme{
     }
     
     func update(textField view: UITextField, key: String){
+        
         self.update(view: view, key: key)
+        let styles = key.components(separatedBy: " ")
+        for style in styles{
+            if let value = self[style] as? [String: Any]{
+                if let value = self[value["leftOffset"]] as? Float{
+                    self.leftOffset(textField: view, offset: CGFloat(value))
+                }
+            }
+        }
     }
     
 }
