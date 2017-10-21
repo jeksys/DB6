@@ -194,7 +194,7 @@ extension DB6Theme{
         let options: [UIControlState] = [.normal, .selected, .highlighted]
         for state in options{
             if let color = button.titleColor(for: state), let text = button.title(for: state), let font = button.titleLabel?.font{
-                let attributedText =  NSAttributedString(string: text, attributes: [NSKernAttributeName:kern, NSFontAttributeName:font, NSForegroundColorAttributeName:color])
+                let attributedText =  NSAttributedString(string: text, attributes: [NSAttributedStringKey.kern:kern, NSAttributedStringKey.font:font, NSAttributedStringKey.foregroundColor:color])
                 button.setAttributedTitle(attributedText, for: state)
             }
             
@@ -205,7 +205,7 @@ extension DB6Theme{
     fileprivate func kern(label: UILabel, kern:CGFloat) {
         if let text = label.text{
             let attributedString =  NSMutableAttributedString(attributedString: label.attributedText ?? NSMutableAttributedString(string: text))
-            attributedString.addAttribute(NSKernAttributeName, value: kern, range: NSMakeRange(0, attributedString.length))
+            attributedString.addAttribute(NSAttributedStringKey.kern, value: kern, range: NSMakeRange(0, attributedString.length))
             label.attributedText =  attributedString
         }
     }
