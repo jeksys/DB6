@@ -9,7 +9,6 @@
 import UIKit
 
 @IBDesignable extension UIView{
-    
     @IBInspectable var style: String?{
         get {
             return nil

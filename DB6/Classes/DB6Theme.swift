@@ -191,7 +191,7 @@ extension DB6Theme{
     
     fileprivate func kern(button: UIButton, kern:CGFloat) {
         
-        let options: [UIControlState] = [.normal, .selected, .highlighted]
+        let options: [UIControlState] = [.normal, .selected, .highlighted, .disabled]
         for state in options{
             if let color = button.titleColor(for: state), let text = button.title(for: state), let font = button.titleLabel?.font{
                 let attributedText =  NSAttributedString(string: text, attributes: [NSAttributedStringKey.kern:kern, NSAttributedStringKey.font:font, NSAttributedStringKey.foregroundColor:color])
@@ -201,6 +201,18 @@ extension DB6Theme{
         }
     }
 
+    fileprivate func font(button: UIButton) {
+        
+        let options: [UIControlState] = [.normal, .selected, .highlighted, .disabled]
+        for state in options{
+            if let color = button.titleColor(for: state), let text = button.title(for: state), let font = button.titleLabel?.font{
+                let attributedText =  NSAttributedString(string: text, attributes: [NSAttributedStringKey.font:font, NSAttributedStringKey.foregroundColor:color])
+                button.setAttributedTitle(attributedText, for: state)
+            }
+        }
+    }
+
+    
     // kern or spacing in Sketch
     fileprivate func kern(label: UILabel, kern:CGFloat) {
         if let text = label.text{
@@ -295,9 +307,9 @@ extension DB6Theme{
     }
 
     func update(button view: UIButton, key: String){
-        
         self.update(view: view, key: key)
         let styles = key.components(separatedBy: " ")
+        
         for style in styles{
             if let value = self[style] as? [String: Any]{
                 if let colorString = self[value["textColor"]] as? String, let color = DB6Theme.colorWithHexString(hexString: colorString){
@@ -306,12 +318,21 @@ extension DB6Theme{
                 if let fontValue = value["font"] as? [String: Any]{
                     if let font = DB6Theme.font(withDictionary: fontValue){
                         view.titleLabel?.font = font
+                        self.font(button: view)
                     }
                 }
-                if let kern = self[value["kern"]] as? Float{
-                    self.kern(button: view, kern: CGFloat(kern))
+                for stateName in [("normal", UIControlState.normal), ("highlighted", UIControlState.highlighted), ("disabled", UIControlState.disabled), ("selected", UIControlState.selected)]{
+                    if let stateDictionary = value[stateName.0] as? [String: Any]{
+                        update(button: view, stateDictionary: stateDictionary, state: stateName.1)
+                    }
                 }
             }
+        }
+    }
+    
+    private func update(button: UIButton, stateDictionary: [String: Any], state: UIControlState){
+        if let backgroundImage = stateDictionary["backgroundImage"] as? String{
+            button.setBackgroundImage(UIImage(named: backgroundImage), for: state)
         }
     }
     
