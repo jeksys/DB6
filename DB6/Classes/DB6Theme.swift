@@ -203,7 +203,7 @@ extension DB6Theme{
 
     fileprivate func font(button: UIButton) {
         
-        let options: [UIControlState] = [.normal, .selected, .highlighted, .disabled]
+        let options: [UIControlState] = [.normal, .highlighted, .disabled]
         for state in options{
             if let color = button.titleColor(for: state), let text = button.title(for: state), let font = button.titleLabel?.font{
                 let attributedText =  NSAttributedString(string: text, attributes: [NSAttributedStringKey.font:font, NSAttributedStringKey.foregroundColor:color])
@@ -321,7 +321,7 @@ extension DB6Theme{
                         self.font(button: view)
                     }
                 }
-                for stateName in [("normal", UIControlState.normal), ("highlighted", UIControlState.highlighted), ("disabled", UIControlState.disabled), ("selected", UIControlState.selected)]{
+                for stateName in [("normal", UIControlState.normal), ("highlighted", UIControlState.highlighted), ("disabled", UIControlState.disabled)]{
                     if let stateDictionary = value[stateName.0] as? [String: Any]{
                         update(button: view, stateDictionary: stateDictionary, state: stateName.1)
                     }
