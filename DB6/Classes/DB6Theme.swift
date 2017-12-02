@@ -191,7 +191,7 @@ extension DB6Theme{
     
     fileprivate func kern(button: UIButton, kern:CGFloat) {
         
-        let options: [UIControlState] = [.normal, .selected, .highlighted, .disabled]
+        let options: [UIControlState] = [.normal, .highlighted, .disabled]
         for state in options{
             if let color = button.titleColor(for: state), let text = button.title(for: state), let font = button.titleLabel?.font{
                 let attributedText =  NSAttributedString(string: NSLocalizedString(text, comment: ""), attributes: [NSAttributedStringKey.kern:kern, NSAttributedStringKey.font:font, NSAttributedStringKey.foregroundColor:color])
