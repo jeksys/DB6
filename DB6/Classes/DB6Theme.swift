@@ -9,7 +9,7 @@ import UIKit
 
 public class DB6Theme{
     
-    static var `default`: DB6Theme?
+    static var `default`: DB6Theme = DB6Theme(fromDictionary: [:])
     
     var name: String
     
@@ -21,6 +21,7 @@ public class DB6Theme{
         static let color = UIColor.black
         static let font = UIFont.systemFont(ofSize: 12)
     }
+    
     
     init(fromDictionary themeDictionary: [String: Any]) {
         name = "Default"

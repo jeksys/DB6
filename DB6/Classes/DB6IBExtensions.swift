@@ -15,7 +15,7 @@ import UIKit
         }
         set{
             if let key = newValue{
-                DB6Theme.default?.apply(view: self, key: key)
+                DB6Theme.default.apply(view: self, key: key)
             }
         }
     }
