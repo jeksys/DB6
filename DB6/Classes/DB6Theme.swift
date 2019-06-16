@@ -335,6 +335,9 @@ extension DB6Theme{
         if let backgroundImage = stateDictionary["backgroundImage"] as? String{
             button.setBackgroundImage(UIImage(named: backgroundImage), for: state)
         }
+        if let colorString = stateDictionary["backgroundColor"] as? String, let color = DB6Theme.colorWithHexString(hexString: colorString){
+            button.backgroundColor = color
+        }
     }
     
     func update(textField view: UITextField, key: String){
