@@ -46,15 +46,13 @@ fileprivate extension DB6Theme{
 extension DB6Theme{
     
     subscript(key: String) -> Any? {
-        get {
-            //TODO: if the first one is @, find a key with
-            let obj = themeDictionary[key]
-
-            if let stringValue = obj as? String, stringValue.hasPrefix("@"){
-                return self[stringValue.replacingOccurrences(of: "@", with: "")]
-            }
-            return obj
+        //TODO: if the first one is @, find a key with
+        let obj = themeDictionary[key]
+        
+        if let stringValue = obj as? String, stringValue.hasPrefix("@"){
+            return self[stringValue.replacingOccurrences(of: "@", with: "")]
         }
+        return obj
     }
     
     func object(key: String) -> Any? {
@@ -233,12 +231,10 @@ extension DB6Theme{
 extension DB6Theme{
     
     fileprivate subscript(value: Any?) -> Any? {
-        get {
-            if let stringValue = value as? String, stringValue.hasPrefix("@"){
-                return self[stringValue.replacingOccurrences(of: "@", with: "")]
-            }
-            return value
+        if let stringValue = value as? String, stringValue.hasPrefix("@"){
+            return self[stringValue.replacingOccurrences(of: "@", with: "")]
         }
+        return value
     }
 
     func apply(view: Any, key: String){
