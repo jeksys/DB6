@@ -190,10 +190,10 @@ extension DB6Theme{
     
     fileprivate func kern(button: UIButton, kern:CGFloat) {
         
-        let options: [UIControlState] = [.normal, .highlighted, .disabled]
+        let options: [UIControl.State] = [.normal, .highlighted, .disabled]
         for state in options{
             if let color = button.titleColor(for: state), let text = button.title(for: state), let font = button.titleLabel?.font{
-                let attributedText =  NSAttributedString(string: NSLocalizedString(text, comment: ""), attributes: [NSAttributedStringKey.kern:kern, NSAttributedStringKey.font:font, NSAttributedStringKey.foregroundColor:color])
+                let attributedText =  NSAttributedString(string: NSLocalizedString(text, comment: ""), attributes: [NSAttributedString.Key.kern:kern, NSAttributedString.Key.font:font, NSAttributedString.Key.foregroundColor:color])
                 button.setAttributedTitle(attributedText, for: state)
             }
             
@@ -202,10 +202,10 @@ extension DB6Theme{
 
     fileprivate func font(button: UIButton) {
         
-        let options: [UIControlState] = [.normal, .highlighted, .disabled]
+        let options: [UIControl.State] = [.normal, .highlighted, .disabled]
         for state in options{
             if let color = button.titleColor(for: state), let text = button.title(for: state), let font = button.titleLabel?.font{
-                let attributedText =  NSAttributedString(string: NSLocalizedString(text, comment: ""), attributes: [NSAttributedStringKey.font:font, NSAttributedStringKey.foregroundColor:color])
+                let attributedText =  NSAttributedString(string: NSLocalizedString(text, comment: ""), attributes: [NSAttributedString.Key.font:font, NSAttributedString.Key.foregroundColor:color])
                 button.setAttributedTitle(attributedText, for: state)
             }
         }
@@ -216,7 +216,7 @@ extension DB6Theme{
     fileprivate func kern(label: UILabel, kern:CGFloat) {
         if let text = label.text{
             let attributedString =  NSMutableAttributedString(attributedString: label.attributedText ?? NSMutableAttributedString(string: text))
-            attributedString.addAttribute(NSAttributedStringKey.kern, value: kern, range: NSMakeRange(0, attributedString.length))
+            attributedString.addAttribute(NSAttributedString.Key.kern, value: kern, range: NSMakeRange(0, attributedString.length))
             label.attributedText =  attributedString
         }
     }
@@ -318,7 +318,7 @@ extension DB6Theme{
                         self.font(button: view)
                     }
                 }
-                for stateName in [("normal", UIControlState.normal), ("highlighted", UIControlState.highlighted), ("disabled", UIControlState.disabled)]{
+                for stateName in [("normal", UIControl.State.normal), ("highlighted", UIControl.State.highlighted), ("disabled", UIControl.State.disabled)]{
                     if let stateDictionary = value[stateName.0] as? [String: Any]{
                         update(button: view, stateDictionary: stateDictionary, state: stateName.1)
                     }
@@ -327,7 +327,7 @@ extension DB6Theme{
         }
     }
     
-    private func update(button: UIButton, stateDictionary: [String: Any], state: UIControlState){
+    private func update(button: UIButton, stateDictionary: [String: Any], state: UIControl.State){
         if let backgroundImage = stateDictionary["backgroundImage"] as? String{
             button.setBackgroundImage(UIImage(named: backgroundImage), for: state)
         }
